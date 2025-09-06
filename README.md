@@ -1,9 +1,4 @@
-# Twitter-Sentiment-Analysis
 
-Perfect 🚀 Here’s a **GitHub/Portfolio-ready write-up** for your **Twitter Sentiment Analysis** project.
-You can copy this to your GitHub `README.md` or portfolio site.
-
----
 
 # 🐦 Twitter Sentiment Analysis
 
