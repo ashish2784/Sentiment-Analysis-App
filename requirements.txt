@@ -6,4 +6,8 @@ emoji
 contractions
 flask
 flask-cors
+playwright
 gunicorn
+tensorflow
+keras
+numpy
