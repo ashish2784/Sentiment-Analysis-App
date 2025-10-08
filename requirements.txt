@@ -1,0 +1,9 @@
+pandas
+scikit-learn
+joblib
+nltk
+emoji
+contractions
+flask
+flask-cors
+playwright
