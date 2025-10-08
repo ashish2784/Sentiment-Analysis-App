@@ -6,4 +6,4 @@ emoji
 contractions
 flask
 flask-cors
-playwright
+gunicorn
