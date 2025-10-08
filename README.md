@@ -1,10 +1,10 @@
 
 
-# Sentiment Analysis
+# 🐦 Twitter Sentiment Analysis
 
-## 📌Project Overview
+## 📌 Project Overview
 
-This project aims to classify Texts into four categories: **Positive, Negative, Neutral, and Irrelevant**.
+This project aims to classify tweets into four categories: **Positive, Negative, Neutral, and Irrelevant**.
 We used a dataset of **74K+ tweets**, applied advanced **text preprocessing**, and built a machine learning pipeline to achieve high accuracy in sentiment classification.
 
 ---
@@ -49,7 +49,7 @@ The challenge was to design a **robust NLP pipeline** that can handle noisy twee
 
 ---
 
-##  Results
+## 🔹 Results
 
 ✅ Cleaned and processed 74K+ tweets
 ✅ Built sentiment classifier achieving 81% accuracy
@@ -58,7 +58,7 @@ The challenge was to design a **robust NLP pipeline** that can handle noisy twee
 
 ---
 
-##  Tech Stack
+## 🔹 Tech Stack
 
 * **Python**
 * **Pandas, NumPy**
@@ -87,7 +87,7 @@ This application is ready to be deployed as a single Web Service on Render. Here
     *   **Name:** Give your service a name (e.g., `sentiment-analysis-app`).
     *   **Region:** Choose a region close to you.
     *   **Branch:** Select the main branch.
-    *   **Build Command:** Set this to `pip install -r requirements.txt`.
+    *   **Build Command:** Set this to `./build.sh`.
     *   **Start Command:** Set this to `gunicorn app.app:app`.
 
 3.  **Deploy:**
