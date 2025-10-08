@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment Analysis</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Sentiment Analysis</h1>
+        <p>Enter text to analyze its sentiment, or upload a text file.</p>
+
+        <div class="input-area">
+            <textarea id="text-input" placeholder="Type or paste your text here..."></textarea>
+            <button id="analyze-text-btn">Analyze Text</button>
+        </div>
+
+        <div class="divider">OR</div>
+
+        <div class="input-area">
+            <input type="file" id="file-input" accept=".txt">
+            <button id="analyze-file-btn">Analyze File</button>
+        </div>
+
+        <div id="result-container" style="display: none;">
+            <h2>Result:</h2>
+            <p id="result-text"></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
