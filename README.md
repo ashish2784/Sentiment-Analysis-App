@@ -75,3 +75,23 @@ The challenge was to design a **robust NLP pipeline** that can handle noisy twee
 
 ---
 
+## 🚀 Deployment on Render
+
+This application is ready to be deployed as a single Web Service on Render. Here are the steps to get it live:
+
+1.  **Create a New Web Service:**
+    *   Go to your Render dashboard and click "New" > "Web Service".
+    *   Connect your GitHub account and select this repository.
+
+2.  **Configure the Service:**
+    *   **Name:** Give your service a name (e.g., `sentiment-analysis-app`).
+    *   **Region:** Choose a region close to you.
+    *   **Branch:** Select the main branch.
+    *   **Build Command:** Set this to `pip install -r requirements.txt`.
+    *   **Start Command:** Set this to `gunicorn app.app:app`.
+
+3.  **Deploy:**
+    *   Click "Create Web Service". Render will automatically build and deploy your application.
+    *   Once the deployment is complete, you can access your live application at the URL provided by Render.
+
+---

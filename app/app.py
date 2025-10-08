@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, send_from_directory
 from flask_cors import CORS
 import joblib
 import re
@@ -9,11 +9,13 @@ import emoji
 import contractions
 import os
 
-# Initialize Flask app
-app = Flask(__name__)
+# Define the path to the frontend directory, which is one level up from the app's directory
+frontend_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'frontend')
+app = Flask(__name__, static_folder=frontend_dir)
 CORS(app)
 
 # Load the trained model and vectorizer
+# The paths are relative to this script's location, so they will work correctly
 model_path = os.path.join(os.path.dirname(__file__), '..', 'model', 'svm_model.pkl')
 vectorizer_path = os.path.join(os.path.dirname(__file__), '..', 'model', 'vectorizer.pkl')
 
@@ -35,6 +37,7 @@ def clean_text(text):
     text = " ".join([w for w in text.split() if w not in stop_words])
     return text.strip()
 
+# API endpoint for text prediction
 @app.route("/predict", methods=["POST"])
 def predict():
     if not request.json or 'text' not in request.json:
@@ -50,6 +53,7 @@ def predict():
 
     return jsonify({"sentiment": prediction[0]})
 
+# API endpoint for file prediction
 @app.route("/predict_file", methods=["POST"])
 def predict_file():
     if 'file' not in request.files:
@@ -74,6 +78,15 @@ def predict_file():
             return jsonify({"error": f"Error processing file: {e}"}), 500
     else:
         return jsonify({"error": "Invalid file type. Please upload a .txt file"}), 400
+
+# Serve the frontend
+@app.route('/', defaults={'path': ''})
+@app.route('/<path:path>')
+def serve(path):
+    if path != "" and os.path.exists(os.path.join(app.static_folder, path)):
+        return send_from_directory(app.static_folder, path)
+    else:
+        return send_from_directory(app.static_folder, 'index.html')
 
 if __name__ == "__main__":
     app.run(debug=True, port=5000)
